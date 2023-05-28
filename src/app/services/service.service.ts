@@ -10,8 +10,6 @@ export class ServiceService {
 
   constructor(private httpService: HttpClient) {}
 
-  // @Output() disparador: EventEmitter<any> = new EventEmitter();
-
   public getAllCharacters(): Observable<any> {
     return this.httpService.get<any>(this.baseUrl);
   }

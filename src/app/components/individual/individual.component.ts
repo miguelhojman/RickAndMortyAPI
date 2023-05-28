@@ -18,6 +18,7 @@ export class IndividualComponent implements OnInit {
   origin: string = '';
   location: string = '';
   created: string = '';
+
   constructor(
     private servicio: ServiceService,
     private router: ActivatedRoute
@@ -25,7 +26,6 @@ export class IndividualComponent implements OnInit {
 
   ngOnInit(): void {
     this.recuperarId();
-
     this.servicio.getCharacterById(this.id).subscribe((data2) => {
       this.name = data2.name;
       this.gender = data2.gender;
@@ -37,11 +37,12 @@ export class IndividualComponent implements OnInit {
       this.created = data2.created;
     });
   }
-
-  recuperarId() {
+  recuperarId(): void {
     this.router.queryParams.pipe(take(1)).subscribe((params) => {
       this.id = params['id'];
-      console.log(this.id);
     });
+  }
+  onGoBack(): void {
+    window.history.back();
   }
 }
