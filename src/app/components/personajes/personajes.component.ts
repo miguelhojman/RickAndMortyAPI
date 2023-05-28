@@ -21,7 +21,7 @@ export class PersonajesComponent {
       this.personajes = data.results;
     });
   }
-  individuo(id: number) {
+  idIndividuo(id: number) {
     this.router.navigate(['/individual'], {
       queryParams: { id: id },
     });

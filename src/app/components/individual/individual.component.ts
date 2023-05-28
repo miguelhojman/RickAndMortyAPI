@@ -9,12 +9,15 @@ import { ServiceService } from 'src/app/services/service.service';
   styleUrls: ['./individual.component.css'],
 })
 export class IndividualComponent implements OnInit {
+  id: number = 0;
   name: string = '';
   gender: string = '';
   status: string = '';
   species: string = '';
   image: string = '';
-  id: number = 0;
+  origin: string = '';
+  location: string = '';
+  created: string = '';
   constructor(
     private servicio: ServiceService,
     private router: ActivatedRoute
@@ -29,6 +32,9 @@ export class IndividualComponent implements OnInit {
       this.status = data2.status;
       this.species = data2.species;
       this.image = data2.image;
+      this.origin = data2.origin.name;
+      this.location = data2.location.name;
+      this.created = data2.created;
     });
   }
 

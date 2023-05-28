@@ -2,9 +2,11 @@
 <div class="card-container d-flex flex-wrap gap-2 justify-content-around">
   <div class="card" *ngFor="let item of personajes">
     <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}" />
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{ item.name }}</h5>
-      <button (click)="individuo(item.id)">Detalles</button>
+      <button class="align-self-center" (click)="idIndividuo(item.id)">
+        Detalles
+      </button>
     </div>
   </div>
 </div>
