@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from 'src/app/services/service.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ServiceService } from 'src/app/services/service.service';
 })
 export class PersonajesComponent {
   personajes: any[] = [];
+
   constructor(private servicio: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
@@ -20,7 +22,8 @@ export class PersonajesComponent {
     });
   }
   individuo(id: number) {
-    this.servicio.disparador.emit(id);
-    this.router.navigate(['/individual']);
+    this.router.navigate(['/individual'], {
+      queryParams: { id: id },
+    });
   }
 }
