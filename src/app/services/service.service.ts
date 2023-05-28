@@ -6,9 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ServiceService {
-  private id: number = 0;
   private baseUrl: string = 'https://rickandmortyapi.com/api/character';
-  //private oneUrl: string = `https://rickandmortyapi.com/api/character/${this.id}`;
 
   constructor(private httpService: HttpClient) {}
 

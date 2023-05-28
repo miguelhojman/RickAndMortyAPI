@@ -1,7 +1,12 @@
-<p>individual works!</p>
-<div *ngFor="let item of datos">
-  <h2>Charactyer</h2>
-  <h5>{{ item.status }}</h5>
-  <h5>{{ item.species }}</h5>
-  <h5>{{ item.image }}</h5>
+<h2 class="d-flex justify-content-center m-5">PERSONAJE SELECCIONADO</h2>
+<div class="card-container d-flex flex-wrap gap-2 justify-content-around">
+  <div class="card">
+    <img src="{{ image }}" class="card-img-top" alt="{{ name }}" />
+    <div class="card-body">
+      <h3 class="card-title">{{ name }}</h3>
+      <h5 class="card-title">{{ gender }}</h5>
+      <h5 class="card-title">{{ status }}</h5>
+      <h5 class="card-title">{{ species }}</h5>
+    </div>
+  </div>
 </div>

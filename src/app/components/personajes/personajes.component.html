@@ -1,8 +1,7 @@
 <h2 class="d-flex justify-content-center m-5">TODOS LOS PERSONAJES</h2>
-
 <div class="card-container d-flex flex-wrap gap-2 justify-content-around">
   <div class="card" *ngFor="let item of personajes">
-    <img src="{{ item.image }}" class="card-img-top" alt="Rick Sanchez" />
+    <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}" />
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
       <button (click)="individuo(item.id)">Detalles</button>

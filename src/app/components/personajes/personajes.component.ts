@@ -9,7 +9,6 @@ import { ServiceService } from 'src/app/services/service.service';
 })
 export class PersonajesComponent {
   personajes: any[] = [];
-  estado: boolean = true;
   constructor(private servicio: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
