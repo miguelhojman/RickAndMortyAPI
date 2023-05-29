@@ -7,4 +7,10 @@ a {
   color: rgb(2, 156, 4);
   text-decoration: none;
   font-style: italic;
+  text-align: center;
+}
+@media screen and (width<576px) {
+  .card-group {
+    flex-direction: column;
+  }
 }

@@ -1,11 +1,25 @@
-<h2 class="d-flex justify-content-center m-5">TODOS LOS PERSONAJES</h2>
+<h2 class="d-flex justify-content-center m-2">TODOS LOS</h2>
+<h2 class="d-flex justify-content-center m-2">PERSONAJES</h2>
+<h2 class="d-flex justify-content-center m-2">ESTÁN AQUÍ</h2>
 <div class="paginacion">
-  <div class="boton-page d-flex m-1" *ngFor="let item of paginasTotales">
-    <button (click)="traerPagina(item)">page {{ item }}</button>
-  </div>
+  <div
+    class="boton-page d-flex m-1"
+    *ngFor="
+      let item of paginasTotales
+        | paginate : { itemsPerPage: 1, currentPage: page }
+    "
+  ></div>
 </div>
-<h2>Pagina {{ page }}</h2>
-<div class="card-container d-flex flex-wrap gap-2 justify-content-around">
+<div class="controles">
+  <pagination-controls
+    (click)="traerPagina(page)"
+    (pageChange)="page = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
+</div>
+<h2 class="titulo">Pagina {{ page }}</h2>
+<div class="card-container d-grid gap-2">
   <div class="card" *ngFor="let item of personajes">
     <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}" />
     <div class="card-body d-flex flex-column">
@@ -15,5 +29,13 @@
       </button>
     </div>
   </div>
+</div>
+<div class="controles my-4">
+  <pagination-controls
+    (click)="traerPagina(page)"
+    (pageChange)="page = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
 </div>
 <app-footer></app-footer>
