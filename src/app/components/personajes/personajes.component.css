@@ -15,3 +15,6 @@ button {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.boton-page {
+  width: 6.3%;
+}
