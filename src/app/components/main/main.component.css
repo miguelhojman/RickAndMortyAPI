@@ -9,6 +9,13 @@ a {
   font-style: italic;
   text-align: center;
 }
+.boton {
+  height: 3.5rem;
+  background-color: rgb(76, 75, 75);
+  color: white;
+  font-style: oblique;
+  border: none;
+}
 @media screen and (width<576px) {
   .card-group {
     flex-direction: column;

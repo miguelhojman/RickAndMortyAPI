@@ -6,8 +6,11 @@ img {
   height: auto;
 }
 button {
+  height: 2rem;
   border-radius: 5%;
-  border: 2px solid grey;
+  background-color: rgb(76, 75, 75);
+  color: white;
+  font-style: oblique;
 }
 .controles {
   display: flex;
@@ -17,10 +20,15 @@ button {
 .titulo {
   padding-left: 2rem;
 }
-
 .card-container {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.cabecera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*********************media queries*******************************/
 @media screen and (width<992px) {
   .card-container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -29,6 +37,10 @@ button {
 @media screen and (width<768px) {
   .card-container {
     grid-template-columns: 1fr 1fr;
+  }
+  .cabecera {
+    flex-direction: column;
+    word-spacing: 2rem;
   }
 }
 @media screen and (width<576px) {

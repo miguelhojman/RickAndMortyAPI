@@ -1,6 +1,8 @@
-<h2 class="d-flex justify-content-center m-2">TODOS LOS</h2>
-<h2 class="d-flex justify-content-center m-2">PERSONAJES</h2>
-<h2 class="d-flex justify-content-center m-2">ESTÁN AQUÍ</h2>
+<div class="cabecera">
+  <h2 class="d-flex justify-content-center m-2">TODOS LOS</h2>
+  <h2 class="d-flex justify-content-center m-2">PERSONAJES</h2>
+  <h2 class="d-flex justify-content-center m-2">ESTÁN AQUÍ</h2>
+</div>
 <div class="paginacion">
   <div
     class="boton-page d-flex m-1"
@@ -14,8 +16,8 @@
   <pagination-controls
     (click)="traerPagina(page)"
     (pageChange)="page = $event"
-    previousLabel="Anterior"
-    nextLabel="Siguiente"
+    previousLabel=""
+    nextLabel=""
   ></pagination-controls>
 </div>
 <h2 class="titulo">Pagina {{ page }}</h2>
@@ -34,8 +36,8 @@
   <pagination-controls
     (click)="traerPagina(page)"
     (pageChange)="page = $event"
-    previousLabel="Anterior"
-    nextLabel="Siguiente"
+    previousLabel=""
+    nextLabel=""
   ></pagination-controls>
 </div>
 <app-footer></app-footer>
