@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
+import { Location } from '@angular/common';
 import { ServiceService } from 'src/app/services/service.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class IndividualComponent implements OnInit {
 
   constructor(
     private servicio: ServiceService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private loc: Location
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ export class IndividualComponent implements OnInit {
     });
   }
   onGoBack(): void {
-    window.history.back();
+    this.loc.back();
+    // window.history.back(); otra forma de hacerlo
   }
 }

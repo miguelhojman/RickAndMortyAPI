@@ -1,4 +1,10 @@
 <h2 class="d-flex justify-content-center m-5">TODOS LOS PERSONAJES</h2>
+<div class="paginacion">
+  <div class="d-flex mx-1" *ngFor="let item of paginasTotales">
+    <button (click)="traerPagina(item)">page {{ item }}</button>
+  </div>
+</div>
+<h2>Pagina {{ page }}</h2>
 <div class="card-container d-flex flex-wrap gap-2 justify-content-around">
   <div class="card" *ngFor="let item of personajes">
     <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}" />

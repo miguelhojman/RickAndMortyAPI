@@ -10,14 +10,20 @@ import { ServiceService } from 'src/app/services/service.service';
 })
 export class PersonajesComponent {
   personajes: any[] = [];
+  page: number = 1;
+  paginasTotales: number[] = [];
 
   constructor(private servicio: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
+    for (let i = 0; i < 42; i++) {
+      this.paginasTotales[i] = i + 1;
+    }
+    //this.page=1; para que vuelva a cargar la 1??
     this.traerPersonajes();
   }
   traerPersonajes() {
-    this.servicio.getAllCharacters().subscribe((data) => {
+    this.servicio.getAllCharacters(this.page).subscribe((data) => {
       this.personajes = data.results;
     });
   }
@@ -25,5 +31,10 @@ export class PersonajesComponent {
     this.router.navigate(['/individual'], {
       queryParams: { id: id },
     });
+  }
+  traerPagina(item: number) {
+    console.log(item);
+    this.page = item;
+    this.traerPersonajes();
   }
 }
